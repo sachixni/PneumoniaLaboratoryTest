@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia Laboratory</title>
+    <link rel = "icon" href = "..\static\images\logo.png" type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Pneumonia Laboratory</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:5000/" style="color:#ff7200;">HOME</a></li>
+                    <li><a href="http://127.0.0.1:5000/about">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5000/test">TEST</a></li>
+                    <li><a href="http://127.0.0.1:5000/contact">CONTACT</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>Welcome to <br><span>Pneumonia</span> <br>Laboratory</h1>
+            <p class="par">We automated manual processes of pneumonia workflow detection <br>
+                with the intention of providing more reliable and <br>
+                faster machine learning solutions
+                with minimal human bias <br> World trusted company since 1995 </p>
+
+            <button class="cn"><a href="http://127.0.0.1:5000/test">Check Yours</a></button>
+
+        </div>
+
+    </div>
+
+    <footer class="footerBar">
+         <iframe src="{{ url_for('footer') }}" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    </footer>
+</body>
+</html>

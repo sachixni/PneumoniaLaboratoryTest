@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+    <title>Pneumonia Laboratry</title>    
+
+    <link rel = "icon" href = "..\static\images\logo.png" type = "image/x-icon">
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">-->
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontawsom-all.min.css') }}">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>    
+
+</head>
+
+<style>
+
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+.result {
+  background-color: lightgrey;
+  width: 500px;
+  height: 220px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #da2f2f;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+    <body>
+    <div class="about">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Pneumonia Laboratory</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:5000/" >HOME</a></li>
+                    <li><a href="http://127.0.0.1:5000/about">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5000/test" style="color:#ff7200;">TEST</a></li>
+                    <li><a href="http://127.0.0.1:5000/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12" style="color: rgb(90, 90, 90); float: left;">
+                        <img src="{{ url_for('static', filename= 'Testing_Image_Folder/Test/test.jpeg') }}" id="profile-img-tag" width="450px" height="450px"  style=" border: 3px solid #ddd; border-radius: 4px; padding: 5px; margin-left: 25px;"/>
+                    </div>
+
+                    <div style="float: left;">
+                        <center>
+                            <button class="button" style="vertical-align:middle; width: 300px;" onclick="predictPneumonia()">
+                                <span>Predict</span>
+                            </button>
+                        </center>
+                        <div class="result">
+                            <h4 style="text-align: center;">Result:</h4><br>
+                            <center>
+                                <span class="blinking" style="font-size:xx-large; font-weight:bold;" id="result"></span>
+                            </center>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    </body>
+    
+</html>
+
+  
+<script>    
+
+    function predictPneumonia(){
+    var validate =  '{{ test_result }}'    
+    var result;
+    if(validate == 0){
+       result = "Normal"
+       document.getElementById("result").innerHTML = result;
+       document.getElementById("result").style.color = "#00e600";
+    }else if (validate == 1){
+       result = "Pneumonia Detected"
+       document.getElementById("result").innerHTML = result;
+       document.getElementById("result").style.color = "#ff3333";
+    }else{
+      result = "NO DATA Imported"
+      document.getElementById("result").innerHTML = result;
+    }
+  }
+</script>
+  
+  

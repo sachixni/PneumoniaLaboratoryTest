@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia Laboratory</title>
+    <link rel = "icon" href = "..\static\images\logo.png" type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contact.css') }}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body style="background: #FFE0B2; font-family: Arial, Helvetica, sans-serif; margin: 0;">
+
+    <div>
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Pneumonia Laboratory</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:5000/" >HOME</a></li>
+                    <li><a href="http://127.0.0.1:5000/about">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5000/test">TEST</a></li>
+                    <li><a href="http://127.0.0.1:5000/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <section style="display: flex;">
+        <div class="aboutUsRow">
+            <div class="aboutUsColumn">
+                <div class="aboutUsCard">
+                    <img src="../static/images/team1.jpg" alt="Sachini" style="width:100%">
+                    <div class="container">
+                        <h2>Sachini De Zoysa</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>sachiniDeZOysa@example.com</p>
+                        <p><button class="aboutUsButton">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aboutUsColumn">
+                <div class="aboutUsCard">
+                    <img src="../static/images/team2.jpg" alt="Mike" style="width:100%">
+                    <div class="container">
+                        <h2>Mike Ross</h2>
+                        <p class="title">Art Director</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="aboutUsButton">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aboutUsColumn">
+                <div class="aboutUsCard">
+                    <img src="../static/images/team3.jpg" alt="John" style="width:100%">
+                    <div class="container">
+                        <h2>John Doe</h2>
+                        <p class="title">Designer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>john@example.com</p>
+                        <p><button class="aboutUsButton">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+<footer class="footerBar">
+    <iframe src="{{ url_for('footer') }}" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+</footer>
+</html>
